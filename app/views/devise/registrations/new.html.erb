@@ -1,0 +1,52 @@
+<section class="hero">
+  <div class="hero-body">
+  </div>
+</section>
+<section class="scetion columns is-mobile">
+  <div class="container content column is-half is-offset-one-quarter">
+<h2 class"title ">Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :username, class: "label" %>
+    <div class="control">
+    <%= f.text_field :username, autofocus: true, placeholder: "yourusername", class: "input" %>
+    </div>
+    <p class="help">Enter your username</p>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, class: "label" %>
+    <div class="control">
+    <%= f.email_field :email, autocomplete: "email", placeholder: "example@email.com", class: "input" %>
+    </div>
+    <p class="help">Make sure it's a valid E-mail address</p>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: "label" %>
+    <div class="control">
+    <%= f.password_field :password, autocomplete: "new-password", class: "input" %>
+    </div>
+    <p class="help">6 characters minimum</p>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, class: "label" %>
+    <div class="control">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+    <%= f.submit "Sign up", class: "button is-success" %>
+    </div>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</section>
+</div>
