@@ -1,0 +1,19 @@
+<% if notice %>
+<section class="section">
+  <div class="container">
+<div class="notification is-primary content">
+       <p class="notice"><%= notice %></p>
+</div>
+  </div>
+</section>
+<% end %>
+
+<% if alert %>
+<section class="section">
+  <div class="container">
+<div class="notification is-warning">
+       <p class="alert"><%= alert %></p>
+</div>
+  </div>
+</section>
+<% end %>
