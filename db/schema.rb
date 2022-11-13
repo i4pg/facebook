@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_13_090523) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_13_101041) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,8 +19,28 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_13_090523) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "comment"
+    t.text "body"
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "friend_requests", force: :cascade do |t|
+    t.bigint "requestor_id", null: false
+    t.bigint "recevier_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recevier_id"], name: "index_friend_requests_on_recevier_id"
+    t.index ["requestor_id"], name: "index_friend_requests_on_requestor_id"
+  end
+
+  create_table "friends", force: :cascade do |t|
+    t.bigint "requestor_user_id", null: false
+    t.bigint "receiver_user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["receiver_user_id"], name: "index_friends_on_receiver_user_id"
+    t.index ["requestor_user_id"], name: "index_friends_on_requestor_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -56,6 +76,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_13_090523) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "friend_requests", "users", column: "recevier_id"
+  add_foreign_key "friend_requests", "users", column: "requestor_id"
+  add_foreign_key "friends", "users", column: "receiver_user_id"
+  add_foreign_key "friends", "users", column: "requestor_user_id"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "users"
