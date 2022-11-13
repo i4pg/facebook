@@ -242,14 +242,12 @@
   <div class="navbar-item">
     <div class="field is-grouped">
        <% if user_signed_in? %>
-         <button class="button">
-    <span title="Badge top right" class="badge">8</span>
-    Button
-</button>
   <%# link_to "New Event", new_event_path,class:"is-link button" %>
-  <%= link_to  users_show_url(id: current_user.id), class: 'button is-primary', style: 'position: relative' do %>        
+  <%= link_to  users_show_url(id: current_user.id), class: 'button is-primary' do %>        
     Profile
-    <span title="Badge top right" class="badge"><%= current_user.request_received.count unless current_user.request_received.count.zero? %></span>
+    <% unless current_user.request_received.count.zero? %>
+      <span title="Badge top right" class="badge is-danger is-top-left"><%= current_user.request_received.count %></span>
+    <% end %>
     <% end %>
   <%= button_to('Logout', destroy_user_session_path, method: :delete, class: "button is-light")  %>        
 <% else %>

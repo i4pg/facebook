@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@creativebulma/bulma-badge@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@creativebulma/bulma-badge/-/bulma-badge-1.0.1.tgz#7f1c2ec04020a4d18db1d960a644a052e61de9da"
+  integrity sha512-cTMgxPdTOsAfPqd9wbrvKNUTvnIt+pNgwwO9Xzu6MRUIFlvGRtIVApaV51f3wt0/uI78BpKv5FPAtEJbmSTZOg==
+
 "@esbuild/android-arm@0.15.13":
   version "0.15.13"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm/-/android-arm-0.15.13.tgz#ce11237a13ee76d5eae3908e47ba4ddd380af86a"

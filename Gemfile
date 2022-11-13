@@ -75,3 +75,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem 'devise-i18n', '~> 1.10'
+
+gem 'devise-bulma-views', github: 'thecodechef/devise-bulma-views'

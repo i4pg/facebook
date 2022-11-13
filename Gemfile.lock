@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/thecodechef/devise-bulma-views.git
+  revision: b5b976e1402a9f83ab8afe8ceefbc86a9c8c4275
+  specs:
+    devise-bulma-views (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -96,6 +102,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.10.2)
+      devise (>= 4.8.0)
     erubi (1.11.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -225,6 +233,8 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise
+  devise-bulma-views!
+  devise-i18n (~> 1.10)
   jbuilder
   jsbundling-rails
   pg (~> 1.1)

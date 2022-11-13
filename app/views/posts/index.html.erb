@@ -1,6 +1,7 @@
-<p style="color: green"><%= notice %></p>
+<section class="scetion columns is-mobile">
+  <div class="container content column is-half is-offset-one-quarter">
 
-<h1>Posts</h1>
+<p style="color: green"><%= notice %></p>
 
 <div id="posts">
   <% @posts.each do |post| %>
@@ -12,3 +13,6 @@
 </div>
 
 <%= link_to "New post", new_post_path %>
+
+</div>
+</section>
