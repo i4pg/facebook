@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_13_101041) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_13_103534) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,10 +27,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_13_101041) do
 
   create_table "friend_requests", force: :cascade do |t|
     t.bigint "requestor_id", null: false
-    t.bigint "recevier_id", null: false
+    t.bigint "receiver_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["recevier_id"], name: "index_friend_requests_on_recevier_id"
+    t.index ["receiver_id"], name: "index_friend_requests_on_receiver_id"
     t.index ["requestor_id"], name: "index_friend_requests_on_requestor_id"
   end
 
@@ -76,7 +76,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_13_101041) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "friend_requests", "users", column: "recevier_id"
+  add_foreign_key "friend_requests", "users", column: "receiver_id"
   add_foreign_key "friend_requests", "users", column: "requestor_id"
   add_foreign_key "friends", "users", column: "receiver_user_id"
   add_foreign_key "friends", "users", column: "requestor_user_id"

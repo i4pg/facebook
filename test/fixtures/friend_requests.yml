@@ -2,8 +2,8 @@
 
 one:
   requestor: one
-  recevier: one
+  receiver: one
 
 two:
   requestor: two
-  recevier: two
+  receiver: two
