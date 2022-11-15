@@ -8,7 +8,7 @@
   <div class="media-content">
     <div class="content">
       <p>
-        <strong><%= post.user.username %></strong> <small><%= post.user.email %></small> <small>31m</small>
+        <strong><%= post.user.username %></strong> <small><%= post.user.email %></small> <small><%= time_ago_in_words(post.created_at) %></small>
         <br>
     <%= post.body %>
       </p>

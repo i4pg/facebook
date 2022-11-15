@@ -7,11 +7,11 @@
 <%= turbo_frame_tag id="new_post", src:new_post_path %>
 </div>
 
+
 <div id="posts">
   <% @posts.each do |post| %>
       <%= render post %>
   <% end %>
 </div>
-
 </div>
 </section>
