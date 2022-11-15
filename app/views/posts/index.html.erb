@@ -3,16 +3,16 @@
 
 <p style="color: green"><%= notice %></p>
 
+<div class="block">
+<%= render "form", post: @post %>
+</div>
+
+
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
   <% end %>
 </div>
-
-<%= link_to "New post", new_post_path %>
 
 </div>
 </section>
