@@ -1,0 +1,9 @@
+<%= turbo_frame_tag id="new_post" do %>
+<%= render "form", post: @post %>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to posts", posts_path %>
+</div>

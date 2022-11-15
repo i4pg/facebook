@@ -1,6 +1,11 @@
+<section class="scetion columns is-mobile">
+  <div class="container content column is-half is-offset-one-quarter">
+
 <p style="color: green"><%= notice %></p>
 
-<%= render @post %>
+    <%= turbo_frame_tag @post do %>
+      <%= render @post %>
+    <% end %>
 
 <div>
   <%= link_to "Edit this post", edit_post_path(@post) %> |
@@ -8,3 +13,6 @@
 
   <%= button_to "Destroy this post", @post, method: :delete %>
 </div>
+
+</div>
+</section>

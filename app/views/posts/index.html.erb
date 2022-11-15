@@ -4,13 +4,12 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="block">
-<%= render "form", post: @post %>
+<%= turbo_frame_tag id="new_post", src:new_post_path %>
 </div>
-
 
 <div id="posts">
   <% @posts.each do |post| %>
-    <%= render post %>
+      <%= render post %>
   <% end %>
 </div>
 

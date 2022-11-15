@@ -1,3 +1,4 @@
+<%= turbo_frame_tag id="new_post" do %>
 <%= form_with(model: post) do |form| %>
   <% if post.errors.any? %>
     <div style="color: red">
@@ -15,7 +16,9 @@
     <%= form.text_area :body, class: "textarea", placeholder: "Write a new post" %>
   </div>
 
+
   <div class="actions">
-    <%= form.submit class: "button is-success" %>
+    <%= form.submit class: "button is-success", turbo_action: "replace" %>
   </div>
+<% end %>
 <% end %>

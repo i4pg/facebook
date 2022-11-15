@@ -1,10 +1,16 @@
-<h1>Editing post</h1>
+<section class="scetion columns is-mobile">
+  <div class="container content column is-half is-offset-one-quarter">
 
+<p style="color: green"><%= notice %></p>
+
+    <%= turbo_frame_tag @post do %>
 <%= render "form", post: @post %>
-
-<br>
+    <% end %>
 
 <div>
   <%= link_to "Show this post", @post %> |
   <%= link_to "Back to posts", posts_path %>
 </div>
+
+</div>
+</section>
