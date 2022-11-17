@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :posts
-  has_many :likes
+  has_many :likes, dependent: :destroy
   has_many :comments
 
   has_many :requested_friends, foreign_key: 'requestor_id', class_name: 'FriendRequest'

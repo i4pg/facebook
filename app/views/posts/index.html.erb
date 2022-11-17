@@ -10,7 +10,7 @@
 
 <div id="posts">
   <% @posts.each do |post| %>
-      <%= render post %>
+    <%= turbo_frame_tag id="new_comment_or_like", src:post_path(post) %>
   <% end %>
 </div>
 </div>

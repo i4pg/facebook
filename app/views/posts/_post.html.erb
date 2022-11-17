@@ -1,3 +1,4 @@
+<%= turbo_frame_tag id="new_comment_or_like" do %>
 <div id="<%= dom_id post %>">
   <article class="media">
   <figure class="media-left">
@@ -18,14 +19,20 @@
         <a class="level-item">
           <span class="icon is-small"><i class="fas fa-reply"></i></span>
         </a>
-        <a class="level-item">
-          <span class="icon is-small"><i class="fas fa-retweet"></i></span>
-        </a>
-        <a class="level-item">
-          <span class="icon is-small"><i class="fas fa-heart"></i></span>
-        </a>
+        <% like =  current_user.likes.find_by( post: post) %>
+        <% if like.nil? %>
+          <%= button_to likes_path, params: { like: { post_id: post.id }}, method: :post, class: "level-item remove-submit-btn-style"  do %>
+          <span class="icon is-small"><i class="fas fa-heart"></i></span>&nbsp;<small><span><%= post.likes.count unless post.likes.count.zero? %></span></small>
+          <% end %>
+        <% else %>
+          <%= button_to like_path(like), method: :delete, class: "level-item a remove-submit-btn-style"  do %>
+          <span class="icon is-small"><i class="fas fa-heart"></i></span>&nbsp;<small><span><%= post.likes.count unless post.likes.count.zero? %></span></small>
+        <% end %>
+          <% end %>
       </div>
     </nav>
   </div>
+  
 </article>
 </div>
+<% end %>
